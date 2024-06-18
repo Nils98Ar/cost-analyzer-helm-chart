@@ -2302,8 +2302,8 @@ networkCosts:
       memory: 20Mi
   extraArgs: []
   config:
-    # The ConfigMap "network-costs-config" will be created
-    # and managed independently from the helm chart
+    # Use an existing ConfigMap "network-costs-config" and 
+    # disable creation and management via this helm chart
     existingConfigMap: false
     # Configuration for traffic destinations, including specific classification
     # for IPs and CIDR blocks. This configuration will act as an override to the
