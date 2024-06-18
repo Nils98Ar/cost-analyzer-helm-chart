@@ -1,6 +1,7 @@
 {{- if .Values.networkCosts -}}
 {{- if .Values.networkCosts.enabled -}}
 {{- if .Values.networkCosts.config -}}
+{{- if not .Values.networkCosts.config.existingConfigMap -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -11,6 +12,7 @@ metadata:
 data:
   config.yaml: |
 {{- toYaml .Values.networkCosts.config | nindent 4 }}
+{{- end -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
